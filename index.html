@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Our store</title>
+        <meta type='description' content="product table">
+        <meta type='author' content="Tomas P.">
+    </head>
+    <body>
+        <h1>Our Store</h1>
+        <h4><u>Slovakia</u></h4>
+        <br>
+        <table id='ptable' border='6px' borderColor='234578hbvcssdfhjhgffvhh'>
+            <tr>
+                <th align='left'>Product</th><th align='left'>Price</th>
+            
+            <tr>
+                <td id='bread'>Bread</td><td><i>0.50</i></td>
+            <tr>    
+                <td id='garlic'>Garlic</td><td><i>0.15</i></td>
+            <tr>
+                <td id='banana'>Banana <mark>BIO</mark></td><td><i>1.05</i></td>
+        </table>
+        <div style="text-align:right;">
+        <h3>Shopping Cart:</h3>
+         <ul id='sclist'> 
+         </ul>   
+        
+        <button id='btn'>Buy</button>
+        </div>
+        <button id='savesc'>Save Shopping Cart</button>
+        <button id='loadsc'>Load Shopping Cart</button>
+            <script>
+                let ptable = document.getElementById("ptable")
+                let btn = document.getElementById("btn")
+                let savesc = document.getElementById("savesc")
+                let bread = document.getElementById("bread")
+                let garlic = document.getElementById("garlic")
+                let banana = document.getElementById("banana")
+                let sclist = document.getElementById('sclist')
+                let loadsc = document.getElementById('loadsc')
+                let scproduct = document.getElementById('scproduct')
+                let bananainsc = 0
+                let garlicinsc = 0
+                let breadinsc = 0
+                let BananaCount = 0
+                let garlicCount = 0
+                let breadCount = 0
+                btn.style.backgroundColor = 'white'
+                ptable.style.backgroundColor = 'olive'
+                savesc.style.backgroundColor = 'gray'
+                
+                
+                /*ptable.onmouseover = function() {ptable.style.backgroundColor = 'green'}
+                ptable.onmouseout = function() {ptable.style.backgroundColor = 'olive'}
+                */
+                bread.onmouseover = function() {bread.style.backgroundColor = 'green';}
+                bread.onmouseout = function() {bread.style.backgroundColor = 'olive';}
+                garlic.onmouseover = function() {garlic.style.backgroundColor = 'green';}
+                garlic.onmouseout = function() {garlic.style.backgroundColor = 'olive';}
+                
+                
+                bread.onclick = function() {
+                    sclist.innerHTML += (`<li>⬤Bread`)
+                    breadCount += 1
+                }
+                garlic.onclick = function() {
+                    sclist.innerHTML += (`<li>⬤Garlic`);
+                    garlicCount += 1
+                }
+                banana.onclick = function() {
+                    sclist.innerHTML += (`<li>⬤Banana`);
+                    apple += 1
+                }
+                btn.onmouseover = function() {btn.style.backgroundColor = 'gray'}
+                btn.onmouseout = function() {btn.style.backgroundColor = 'white'}
+                btn.onclick = function() {
+                    alert('Sucessfully buyed!')
+                    sclist.innerHTML = `<ul></ul>`
+                }
+                savesc.onclick = function() {
+                    localStorage.setItem('garliccount', garlicCount)
+                    localStorage.setItem('breadcount', breadCount)
+                    localStorage.setItem('applecount', applesCount)
+                    console.log('Shopping cart was saved')
+                    alert("Shopping cart was saved")
+                }
+                loadsc.onclick = function() {
+                    alert('Your saved shopping cart: ' + Number(localStorage.getItem('breadcount'))+ ' ' + 'bread packages' + ', ' + Number(localStorage.getItem('garliccount')) + ' ' + 'garlics' + ' ' + 'and' + ' ' + Number(localStorage.getItem('applecount')) + ' ' + 'apples.' )
+                    console.log('Your saved shopping cart: ' + Number(localStorage.getItem('breadcount'))+ ' ' + 'bread packages' + ', ' + Number(localStorage.getItem('garliccount')) + ' ' + 'garlics' + ' ' + 'and' + ' ' + Number(localStorage.getItem('applecount')) + ' ' + 'apples.')
+                }
+            </script>
+    </body>
+    
+
+</html>
