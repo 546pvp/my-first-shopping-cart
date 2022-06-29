@@ -69,7 +69,7 @@
                 }
                 banana.onclick = function() {
                     sclist.innerHTML += (`<li>⬤Banana`);
-                    apple += 1
+                    BananaCount += 1
                 }
                 btn.onmouseover = function() {btn.style.backgroundColor = 'gray'}
                 btn.onmouseout = function() {btn.style.backgroundColor = 'white'}
@@ -80,13 +80,13 @@
                 savesc.onclick = function() {
                     localStorage.setItem('garliccount', garlicCount)
                     localStorage.setItem('breadcount', breadCount)
-                    localStorage.setItem('applecount', applesCount)
+                    localStorage.setItem('bananacount', applesCount)
                     console.log('Shopping cart was saved')
                     alert("Shopping cart was saved")
                 }
                 loadsc.onclick = function() {
-                    alert('Your saved shopping cart: ' + Number(localStorage.getItem('breadcount'))+ ' ' + 'bread packages' + ', ' + Number(localStorage.getItem('garliccount')) + ' ' + 'garlics' + ' ' + 'and' + ' ' + Number(localStorage.getItem('applecount')) + ' ' + 'apples.' )
-                    console.log('Your saved shopping cart: ' + Number(localStorage.getItem('breadcount'))+ ' ' + 'bread packages' + ', ' + Number(localStorage.getItem('garliccount')) + ' ' + 'garlics' + ' ' + 'and' + ' ' + Number(localStorage.getItem('applecount')) + ' ' + 'apples.')
+                    alert('Your saved shopping cart: ' + Number(localStorage.getItem('breadcount'))+ ' ' + 'bread packages' + ', ' + Number(localStorage.getItem('garliccount')) + ' ' + 'garlics' + ' ' + 'and' + ' ' + Number(localStorage.getItem('bananacount')) + ' ' + 'bananas.' )
+                    console.log('Your saved shopping cart: ' + Number(localStorage.getItem('breadcount'))+ ' ' + 'bread packages' + ', ' + Number(localStorage.getItem('garliccount')) + ' ' + 'garlics' + ' ' + 'and' + ' ' + Number(localStorage.getItem('bananacount')) + ' ' + 'bananas.')
                 }
             </script>
     </body>
